@@ -8,22 +8,22 @@
     android:tag="ll"
     tools:context=".TestSimpleActivity">
 
-    <TextView
+    <com.example.xie.longtimeconsumetest.MyLayout.MyTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
         android:text="line 1"/>
-    <TextView
+    <com.example.xie.longtimeconsumetest.MyLayout.MyTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
         android:text="line 2"/>
-    <TextView
+    <com.example.xie.longtimeconsumetest.MyLayout.MyTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
         android:text="line 3"/>
-    <TextView
+    <com.example.xie.longtimeconsumetest.MyLayout.MyTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
