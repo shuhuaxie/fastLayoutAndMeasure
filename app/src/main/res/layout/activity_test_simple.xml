@@ -32,7 +32,7 @@
         android:textSize="20dp"
         android:tag="long text"
         android:text="long text ................ 女童看熊猫掉进饲养池 成都大熊猫繁育研究基地回应 end"/>
-    <com.example.xie.longtimeconsumetest.MyLayout.MyImageView
+    <com.example.xie.fastlayouttest.MyImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:tag="iv"

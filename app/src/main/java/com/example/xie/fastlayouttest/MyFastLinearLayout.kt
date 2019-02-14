@@ -33,7 +33,13 @@ class MyFastLinearLayout : LinearLayout {
     }
 
     private fun layoutWithPara(viewGroup: ViewGroup, myLayoutPara: MyLayoutPara?) {
-        for (i in 0 until childCount) {
+        for (i in 0 until viewGroup.childCount) {
+//            if ((myLayoutPara?.views?.size!! < (i + 1))) {
+//                Log.e("xie", "view type:" + this.javaClass.toString())
+//                Log.e("xie", "childCount:" + childCount.toString() +
+//                        "__size:" + myLayoutPara?.views?.size!!)
+//                return
+//            }
             var para = myLayoutPara?.views?.get(i)
             para?.let { para ->
                 val child = viewGroup.getChildAt(i)?.apply {

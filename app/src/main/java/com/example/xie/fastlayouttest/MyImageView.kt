@@ -1,4 +1,4 @@
-package com.example.xie.longtimeconsumetest.MyLayout
+package com.example.xie.fastlayouttest
 
 import android.annotation.SuppressLint
 import android.content.Context
