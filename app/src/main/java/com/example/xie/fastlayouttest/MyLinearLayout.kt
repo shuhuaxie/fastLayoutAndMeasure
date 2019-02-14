@@ -37,27 +37,31 @@ class MyLinearLayout : LinearLayout {
     private fun layoutWithPara(viewGroup: ViewGroup, myLayoutPara: MyLayoutPara?) {
         for (i in 0 until childCount) {
             var para = myLayoutPara?.views?.get(i)
-            val child = viewGroup.getChildAt(i).apply {
-                // 反射
-                try {
-                    val clazz1 = View::class.java
-                    val method = clazz1.getDeclaredMethod("setMeasuredDimension",
-                            Int::class.java, Int::class.java)
-                    method.isAccessible = true
-                    method.invoke(this, para!!.width,
-                            para.height)
-                    val method2 = clazz1.getDeclaredMethod("setFrame",
-                            Int::class.java, Int::class.java,Int::class.java, Int::class.java)
-                    method2.isAccessible = true
-                    method2.invoke(this, para.left, para.top, para.right, para.bottom)
-                } catch (e: Exception) {
-                    e.printStackTrace()
+            para?.let { para ->
+                val child = viewGroup.getChildAt(i)?.apply {
+                    left = para!!.left
+                    top = para.top
+                    right = para.right
+                    bottom = para.bottom
+                }
+                if (child is ViewGroup) {
+                    layoutWithPara(child, para)
                 }
             }
-            if (child is ViewGroup) {
-                layoutWithPara(child, para)
-            }
+
         }
+
+//        myLayoutPara?.views?.get(i)?.let { para ->
+//            viewGroup.getChildAt(i)?.let {
+//                left = para!!.left
+//                top = para.top
+//                right = para.right
+//                bottom = para.bottom
+//                if (it is ViewGroup) {
+//                    layoutWithPara(this, para)
+//                }
+//            }
+//        }
     }
 
     private fun saveLayoutInfo(viewGroup: ViewGroup, layoutPara: MyLayoutPara) {
