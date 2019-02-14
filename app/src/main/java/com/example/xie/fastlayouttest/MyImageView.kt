@@ -23,7 +23,7 @@ class MyImageView : ImageView {
 
     override fun onLayout(changed: Boolean, l: Int, t: Int, r: Int, b: Int) {
         Log.e("xie", "ImageView onLayout")
-        super.onLayout(changed, left, top, right, bottom)
+        super.onLayout(changed, l, t, r, b)
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
@@ -32,7 +32,7 @@ class MyImageView : ImageView {
     }
 
     override fun onDraw(canvas: Canvas?) {
-        Log.e("xie", "ImageView onDraw " + tag.toString())
+//        Log.e("xie", "ImageView onDraw " + tag.toString())
         super.onDraw(canvas)
     }
 

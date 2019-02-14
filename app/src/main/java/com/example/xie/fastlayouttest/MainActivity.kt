@@ -13,5 +13,8 @@ class MainActivity : Activity() {
         findViewById<Button>(R.id.bt_test).setOnClickListener()
         { startActivity(Intent(this, TestSimpleActivity::class.java)) }
 
+        findViewById<Button>(R.id.bt_to_layout).setOnClickListener()
+        { startActivity(Intent(this, TestLayoutActivity::class.java)) }
+
     }
 }

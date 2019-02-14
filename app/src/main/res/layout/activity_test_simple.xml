@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.xie.longtimeconsumetest.MyLayout.MyLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.example.xie.fastlayouttest.MyFastLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:tag="ll"
+    android:tag="simple_ll"
     tools:context=".TestSimpleActivity">
 
-    <com.example.xie.longtimeconsumetest.MyLayout.MyTextView
+    <com.example.xie.fastlayouttest.MyTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
         android:tag="line 1"
         android:text="line 1"/>
-    <com.example.xie.longtimeconsumetest.MyLayout.MyTextView
+    <com.example.xie.fastlayouttest.MyTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
         android:tag="line 2"
         android:text="line 2"/>
-    <com.example.xie.longtimeconsumetest.MyLayout.MyTextView
+    <com.example.xie.fastlayouttest.MyTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
         android:tag="line 3"
         android:text="line 3"/>
-    <com.example.xie.longtimeconsumetest.MyLayout.MyTextView
+    <com.example.xie.fastlayouttest.MyTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
@@ -38,4 +38,4 @@
         android:tag="iv"
         android:src="@mipmap/ic_launcher"/>
 
-</com.example.xie.longtimeconsumetest.MyLayout.MyLinearLayout>
+</com.example.xie.fastlayouttest.MyFastLinearLayout>
