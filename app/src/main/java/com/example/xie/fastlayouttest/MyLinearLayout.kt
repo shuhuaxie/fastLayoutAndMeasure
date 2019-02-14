@@ -3,9 +3,12 @@ package com.example.xie.longtimeconsumetest.MyLayout
 import android.content.Context
 import android.util.AttributeSet
 import android.util.Log
+import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import com.example.xie.fastlayouttest.TestSimpleActivity
+import java.lang.reflect.AccessibleObject.setAccessible
+
 
 class MyLinearLayout : LinearLayout {
     constructor(context: Context) : super(context) {}
@@ -34,10 +37,23 @@ class MyLinearLayout : LinearLayout {
     private fun layoutWithPara(viewGroup: ViewGroup, myLayoutPara: MyLayoutPara?) {
         for (i in 0 until childCount) {
             var para = myLayoutPara?.views?.get(i)
-            val child = viewGroup.getChildAt(i)
-            setMeasuredDimension(para!!.width,
-                    para!!.height)
-            child.layout(para.left, para.top, para.right, para.bottom)
+            val child = viewGroup.getChildAt(i).apply {
+                // 反射
+                try {
+                    val clazz1 = View::class.java
+                    val method = clazz1.getDeclaredMethod("setMeasuredDimension",
+                            Int::class.java, Int::class.java)
+                    method.isAccessible = true
+                    method.invoke(this, para!!.width,
+                            para.height)
+                    val method2 = clazz1.getDeclaredMethod("setFrame",
+                            Int::class.java, Int::class.java,Int::class.java, Int::class.java)
+                    method2.isAccessible = true
+                    method2.invoke(this, para.left, para.top, para.right, para.bottom)
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+            }
             if (child is ViewGroup) {
                 layoutWithPara(child, para)
             }
