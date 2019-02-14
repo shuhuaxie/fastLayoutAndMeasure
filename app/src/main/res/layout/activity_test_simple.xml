@@ -12,20 +12,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
+        android:tag="line 1"
         android:text="line 1"/>
     <com.example.xie.longtimeconsumetest.MyLayout.MyTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
+        android:tag="line 2"
         android:text="line 2"/>
     <com.example.xie.longtimeconsumetest.MyLayout.MyTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
+        android:tag="line 3"
         android:text="line 3"/>
     <com.example.xie.longtimeconsumetest.MyLayout.MyTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
+        android:tag="long text"
         android:text="long text ................ 女童看熊猫掉进饲养池 成都大熊猫繁育研究基地回应 end"/>
+    <com.example.xie.longtimeconsumetest.MyLayout.MyImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tag="iv"
+        android:src="@mipmap/ic_launcher"/>
+
 </com.example.xie.longtimeconsumetest.MyLayout.MyLinearLayout>

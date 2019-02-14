@@ -8,7 +8,6 @@ class TestSimpleActivity : Activity() {
 
     companion object {
         var layoutMap = HashMap<String, MyLayoutPara>()
-        var firstOpen = true
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

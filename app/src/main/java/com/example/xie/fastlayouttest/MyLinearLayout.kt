@@ -5,6 +5,7 @@ import android.util.AttributeSet
 import android.util.Log
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.LinearLayout
 import com.example.xie.fastlayouttest.TestSimpleActivity
 import java.lang.reflect.AccessibleObject.setAccessible
@@ -39,10 +40,19 @@ class MyLinearLayout : LinearLayout {
             var para = myLayoutPara?.views?.get(i)
             para?.let { para ->
                 val child = viewGroup.getChildAt(i)?.apply {
-                    left = para!!.left
-                    top = para.top
-                    right = para.right
-                    bottom = para.bottom
+                    if (this is ImageView) {
+                        // ImageView's setFrame is different
+                        val clazz = ImageView::class.java
+                        val method = clazz.getDeclaredMethod("setFrame",
+                                Int::class.java, Int::class.java, Int::class.java, Int::class.java)
+                        method.isAccessible = true
+                        method.invoke(this, para!!.left, para.top, para.right, para.bottom)
+                    } else {
+                        left = para!!.left
+                        top = para.top
+                        right = para.right
+                        bottom = para.bottom
+                    }
                 }
                 if (child is ViewGroup) {
                     layoutWithPara(child, para)
@@ -51,17 +61,6 @@ class MyLinearLayout : LinearLayout {
 
         }
 
-//        myLayoutPara?.views?.get(i)?.let { para ->
-//            viewGroup.getChildAt(i)?.let {
-//                left = para!!.left
-//                top = para.top
-//                right = para.right
-//                bottom = para.bottom
-//                if (it is ViewGroup) {
-//                    layoutWithPara(this, para)
-//                }
-//            }
-//        }
     }
 
     private fun saveLayoutInfo(viewGroup: ViewGroup, layoutPara: MyLayoutPara) {
