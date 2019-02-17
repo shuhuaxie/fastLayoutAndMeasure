@@ -1,17 +1,16 @@
 package com.example.xie.fastlayouttest
 
-import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.Canvas
+import android.support.v7.widget.RecyclerView
 import android.util.AttributeSet
 import android.util.Log
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.TextView
 
-class MyTextView : TextView {
+
+class MyRecyclerView : RecyclerView {
     constructor(context: Context) : super(context) {}
 
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
@@ -20,18 +19,13 @@ class MyTextView : TextView {
     constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {}
 
     override fun onLayout(changed: Boolean, l: Int, t: Int, r: Int, b: Int) {
-        Log.e("xie", "TextView onLayout")
+        Log.e("xie", "MyRecyclerView onLayout")
         super.onLayout(changed, l, t, r, b)
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        Log.e("xie", "TextView onMeasure")
+        Log.e("xie", "MyRecyclerView onMeasure")
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
-    }
-
-    override fun onDraw(canvas: Canvas?) {
-        Log.e("xie", "TextView onDraw " + tag.toString())
-        super.onDraw(canvas)
     }
 
 }

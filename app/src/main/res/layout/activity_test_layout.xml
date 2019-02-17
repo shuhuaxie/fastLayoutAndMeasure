@@ -81,6 +81,14 @@
             app:layout_constraintTop_toTopOf="parent" />
     </android.support.constraint.ConstraintLayout>
 
+    <com.example.xie.fastlayouttest.MyRecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:tag="rv"
+        android:id="@+id/recycler_view"
+        >
+
+    </com.example.xie.fastlayouttest.MyRecyclerView>
 
 
 </com.example.xie.fastlayouttest.MyFastLinearLayout>

@@ -8,4 +8,5 @@ class MyLayoutPara {
     var left = 0
     var top = 0
     var bottom = 0
+    var className = ""
 }
